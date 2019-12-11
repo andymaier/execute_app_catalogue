@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @EnableKafka
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @SpringBootApplication
 public class CatalogueApplication {
 	@Bean

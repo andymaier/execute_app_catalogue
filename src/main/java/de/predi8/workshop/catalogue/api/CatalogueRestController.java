@@ -45,7 +45,7 @@ public class CatalogueRestController {
 
 	@GetMapping("/{id}")
 	public Article index(@PathVariable String id) {
-		Article article = articleRepository.findOne(id);
+		Article article = articleRepository.findById(id).get();
 
 		if (article == null) {
 			throw new NotFoundException();
@@ -70,7 +70,7 @@ public class CatalogueRestController {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> delete(@PathVariable String id) throws InterruptedException, ExecutionException, TimeoutException {
-		Article article = articleRepository.findOne(id);
+		Article article = articleRepository.findById(id).get();
 
 		if (article == null) {
 			throw new NotFoundException();

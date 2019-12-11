@@ -37,7 +37,7 @@ public class ShopListener {
 
 				break;
 			case "update":
-				Article old = articleRepository.findOne(article.getUuid());
+				Article old = articleRepository.findById(article.getUuid()).get();
 
 				beanUtils.copyProperties(old, article);
 
