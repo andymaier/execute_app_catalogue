@@ -59,7 +59,7 @@ public class CatalogueRestController {
 		String id = UUID.randomUUID().toString();
 		article.setUuid(id);
 
-		Operation op = new Operation("article", "create", mapper.valueToTree(article));
+		Operation op = new Operation("article", "upsert", mapper.valueToTree(article));
 
 		op.logSend();
 
@@ -89,7 +89,7 @@ public class CatalogueRestController {
 	public ResponseEntity<Void> update(@PathVariable String id, @RequestBody Article article) throws InterruptedException, ExecutionException, TimeoutException {
 		article.setUuid(id);
 
-		Operation op = new Operation("article", "update", mapper.valueToTree(article));
+		Operation op = new Operation("article", "upsert", mapper.valueToTree(article));
 
 		op.logSend();
 
