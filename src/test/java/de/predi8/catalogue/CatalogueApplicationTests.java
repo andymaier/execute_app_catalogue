@@ -1,4 +1,4 @@
-package de.predi8.workshop.catalogue;
+package de.predi8.catalogue;
 
 import de.predi8.workshop.catalogue.event.Operation;
 import org.junit.Test;

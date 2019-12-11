@@ -1,0 +1,39 @@
+spring:
+
+  application:
+    name: catalogue
+
+  datasource:
+      url: jdbc:postgresql://localhost:5432/catalogue
+      username: catalogue
+      password: catalogue
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          # Fix for Spring 2 and Postgres
+          lob:
+            non_contextual_creation: true
+  kafka:
+   consumer:
+      group-id: catalogue-1
+      auto-offset-reset: earliest
+
+server:
+  port: 8080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    prometheus:
+      enabled: true
+
