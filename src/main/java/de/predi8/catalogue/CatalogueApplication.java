@@ -1,7 +1,7 @@
-package de.predi8.workshop.catalogue;
+package de.predi8.catalogue;
 
-import de.predi8.workshop.catalogue.domain.Article;
-import de.predi8.workshop.catalogue.event.NullAwareBeanUtilsBean;
+import de.predi8.catalogue.event.NullAwareBeanUtilsBean;
+import de.predi8.catalogue.model.Article;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -21,7 +21,7 @@ public class CatalogueApplication {
 	}
 
 	@Bean
-	public Map<String,Article> articles() {
+	public Map<String, Article> articles() {
 		return new ConcurrentHashMap<>();
 	}
 

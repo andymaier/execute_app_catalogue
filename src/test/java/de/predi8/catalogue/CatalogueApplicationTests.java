@@ -1,6 +1,6 @@
 package de.predi8.catalogue;
 
-import de.predi8.workshop.catalogue.event.Operation;
+import de.predi8.catalogue.event.Operation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
