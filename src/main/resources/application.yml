@@ -4,7 +4,7 @@ spring:
     name: catalogue
 
   datasource:
-      url: jdbc:postgresql://10.111.78.57:5432/catalogue
+      url: jdbc:postgresql://localhost:5432/catalogue
       username: catalogue
       password: catalogue
 
@@ -21,7 +21,7 @@ spring:
    consumer:
       group-id: catalogue-1
       auto-offset-reset: earliest
-   bootstrap-servers: 10.108.199.157:9092
+   #bootstrap-servers: 10.108.199.157:9092
 
 server:
   port: 8080
