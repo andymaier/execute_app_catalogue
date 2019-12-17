@@ -19,7 +19,7 @@ spring:
             non_contextual_creation: true
   kafka:
    consumer:
-      group-id: catalogue-2
+      group-id: catalogue-3
       auto-offset-reset: earliest
    bootstrap-servers: broker:29092
 
