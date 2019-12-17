@@ -7,17 +7,12 @@ node {
             sh "mvn -DskipTests=true package"
         }
 
-        stage('Maven Tests') {
-            //sh "mvn test"
-            sh "echo Testing"
-        }
-
         stage('Docker image') {
              docker.build("catalogue")
         }
 
         stage("Deploy") {
             sh "docker rm -f catalogue || echo 'ok'"
-            sh "docker run -d --name catalogue --net shop -p 2020:8080 catalogue"
+            sh "docker run -d --name catalogue --net cp-all-in-one_default -p 11080:8080 catalogue"
         }
 }

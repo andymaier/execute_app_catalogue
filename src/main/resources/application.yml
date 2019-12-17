@@ -4,7 +4,7 @@ spring:
     name: catalogue
 
   datasource:
-      url: jdbc:postgresql://localhost:5432/catalogue
+      url: jdbc:postgresql://postgres:5432/catalogue
       username: catalogue
       password: catalogue
 
@@ -19,9 +19,9 @@ spring:
             non_contextual_creation: true
   kafka:
    consumer:
-      group-id: catalogue-1
+      group-id: catalogue-2
       auto-offset-reset: earliest
-   #bootstrap-servers: 10.108.199.157:9092
+   bootstrap-servers: broker:29092
 
 server:
   port: 8080
