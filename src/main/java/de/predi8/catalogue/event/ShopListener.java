@@ -33,6 +33,7 @@ public class ShopListener {
 
 		switch (op.getAction()) {
 			case "create":
+			case "upsert":
 				articleRepository.save(article);
 
 				break;
