@@ -20,3 +20,14 @@ spec:
         image: localhost:5000/msa-catalogue-test:version2.0
         ports:
         - containerPort: 8080
+        #env:
+        #- name: ENV_NAME
+        #  valueFrom:
+        #    configMapKeyRef:
+        #      name: metadataName
+        #      key: key-name
+        #- name: SEC_ENV_NAME
+        #  valueFrom:
+        #    secretKeyRef:
+        #      name: metadataName
+        #      key: key-password
