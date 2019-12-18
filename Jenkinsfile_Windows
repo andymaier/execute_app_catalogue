@@ -11,8 +11,14 @@ node {
              docker.build("catalogue")
         }
 
+        stage('Docker push') {             
+             sh "docker tag catalogue localhost:5000/catalogue"
+             sh "docker push localhost:5000/catalogue"
+        }
+
         stage("Deploy") {
             sh "docker rm -f catalogue || echo 'ok'"
-            sh "docker run -d --name catalogue --net cpallinone_default -p 11080:8080 catalogue"
+            sh "docker pull localhost:5000/catalogue"
+            sh "docker run -d --name catalogue --net cpallinone_default -p 11081:8081 localhost:5000/catalogue"
         }
 }
