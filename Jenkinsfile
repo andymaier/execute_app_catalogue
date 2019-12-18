@@ -19,6 +19,6 @@ node {
         stage("Deploy") {
             sh "docker rm -f catalogue || echo 'ok'"
             sh "docker pull localhost:5000/catalogue"
-            sh "docker run -d --name catalogue --net cp-all-in-one_default -p 11081:8081 localhost:5000/catalogue"
+            sh "docker run -d --name catalogue --net cp-all-in-one_default -p 11080:8080 localhost:5000/catalogue"
         }
 }
